@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return 'Home Page Route'
+    return 'SERVER IS RUNNING. for nHnetai feed goto /rss'
 
 
 @app.route('/about')
@@ -19,9 +19,9 @@ def portfolio():
     return 'Portfolio Page Route'
 
 
-@app.route('/contact')
+@app.route('/rss')
 def contact():
-    return 'Contact Page Route'
+    return 'RSS Page Route'
 
 
 @app.route('/api')
