@@ -6,7 +6,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return 'SERVER IS RUNNING. for nHnetai feed goto /rss'
+    return '''
+    <a href="/home">Home</a>
+    '''
 
 
 @app.route('/about')
