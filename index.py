@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route('/')
 def home():
     return '''
-    <a href="/home">Home</a>
+    <a href="/rss">nHentai RSS</a>
     '''
 
 
