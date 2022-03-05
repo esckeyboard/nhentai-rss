@@ -8,7 +8,6 @@ import re
 import requests
 
 app = Flask(__name__)
-run_with_ngrok(app)
 
 sch = APScheduler()
 sch.init_app(app)
