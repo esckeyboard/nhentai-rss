@@ -98,26 +98,25 @@ def about():
  
 @app.route('/rss-pop')
 def rss():
- return '''
- <hr />
- <h1 style="text-align:center"><span style="font-size:72px"><strong>404 Not Found</strong></span></h1>
+ return '''<hr />
+<h1 style="text-align:center"><span style="font-size:72px"><strong>404 Not Found</strong></span></h1>
 
- <p style="text-align:center"><span style="font-size:20px">Still under construction</span></p>
+<p style="text-align:center"><span style="font-size:20px">Still under construction</span></p>
 
- <hr />
- <p>&nbsp;</p>
+<hr />
+<p>&nbsp;</p>
 
- <p>&nbsp;</p>
+<p>&nbsp;</p>
 
- <p style="text-align:center"><img alt="" src="https://c.tenor.com/nq76xNvyoYkAAAAd/construction-lol.gif" style="height:264px; width:424px" /></p>
+<p style="text-align:center"><img alt="" src="https://c.tenor.com/nq76xNvyoYkAAAAd/construction-lol.gif" style="height:264px; width:424px" /></p>
 
- <p style="text-align:center">&nbsp;</p>
+<p style="text-align:center">&nbsp;</p>
 
- <p style="text-align:center">&nbsp;</p>
+<p style="text-align:center">&nbsp;</p>
 
- <p style="text-align:center"><span style="font-size:20px">&gt;&gt;&gt;&nbsp;<strong><span style="background-color:#00ff00"><a href="/" style="background-color: #00ff00;">Home</a></span></strong>&nbsp;|&nbsp;<strong><span style="background-color:#00ff00"><a href="/rss" style="background-color: #00ff00;">nHentai English RSS</a></span>&nbsp;</strong>| <strong><span style="background-color:#00ff00"><a href="/about" style="background-color: #00ff00;">About</a></span>&nbsp;</strong>&lt;&lt;&lt;&lt;</span></p>
+<p style="text-align:center"><span style="font-size:20px">&gt;&gt;&gt;&nbsp;<strong><span style="background-color:#00ff00"><a href="/" style="background-color: #00ff00;">Home</a></span></strong>&nbsp;|&nbsp;<strong><span style="background-color:#00ff00"><a href="/rss" style="background-color: #00ff00;">nHentai English RSS</a></span>&nbsp;</strong>| <strong><span style="background-color:#00ff00"><a href="/about" style="background-color: #00ff00;">About</a></span>&nbsp;</strong>&lt;&lt;&lt;&lt;</span></p>
 
- '''
+'''
   
 #if __name__ == '__main__':
 #  sch.start()
