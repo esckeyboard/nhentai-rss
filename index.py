@@ -96,7 +96,7 @@ def about():
 '''
  
 @app.route('/rss-pop')
-def rss():
+def rsspop():
  return '''
  <hr />
 <h1 style="text-align:center"><span style="font-size:72px"><strong>404 Not Found</strong></span></h1>
