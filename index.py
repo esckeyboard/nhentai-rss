@@ -57,8 +57,27 @@ def main():
   '''
 @app.route('/rss')
 def rss():
-  return Response(data(), mimetype='text/xml')
+ return Response(data(), mimetype='text/xml')
 
-if __name__ == '__main__':
-  sch.start()
-  app.run()
+@app.route('/api')
+def api():
+    with open('data.json', mode='r') as my_file:
+        text = my_file.read()
+        return text
+
+@app.route('/about')
+def about():
+    return 'About Page Route'
+
+
+@app.route('/portfolio')
+def portfolio():
+    return 'Portfolio Page Route'
+
+@app.route('/contact')
+def contact():
+    return 'Contact Page Route'    
+    
+#if __name__ == '__main__':
+#  sch.start()
+#  app.run()
