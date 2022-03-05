@@ -49,34 +49,44 @@ def data():
 @app.route('/')
 def main():
   return '''
-  <h1 style="text-align: center;"><strong>nHentai API</strong></h1>
-  <p style="text-align: center;">please donate :&gt;</p>
-  <p style="text-align: center;">&nbsp;</p>
-  <p style="text-align: center;">&nbsp;</p>
-  <p style="text-align: center;"><span style="background-color: #00ff00;"><a style="background-color: #00ff00;" href="/rss">nHentai RSS English</a></span></p>
+<hr />
+<h1 style="text-align:center"><strong>nHentai API</strong></h1>
+
+<p>&nbsp;</p>
+
+<p style="text-align:center">please donate :&gt;</p>
+
+<p style="text-align:center"><span style="font-size:9px">paypal :&nbsp;paypal.me/mohimronfirdaus</span></p>
+
+<p style="text-align:center">&nbsp;</p>
+
+<p style="text-align:center">&nbsp;</p>
+
+<p style="text-align:center">&nbsp;</p>
+
+<p style="text-align:center">&gt;&gt;&gt;&nbsp;<strong><span style="background-color:#00ff00"><a href="/rss" style="background-color: #00ff00;">nHentai RSS English</a></span>&nbsp;</strong>| <strong><span style="background-color:#00ff00"><a href="/about" style="background-color: #00ff00;">About</a></span>&nbsp;</strong>&lt;&lt;&lt;</p>
+
   '''
 @app.route('/rss')
 def rss():
  return Response(data(), mimetype='text/xml')
 
-@app.route('/api')
-def api():
-    with open('data.json', mode='r') as my_file:
-        text = my_file.read()
-        return text
-
 @app.route('/about')
 def about():
-    return 'About Page Route'
+    return '''
+<hr />
+<h1 style="text-align:center">What are you expecting here ?</h1>
 
+<p style="text-align:center">There are no nude picts here :P</p>
 
-@app.route('/portfolio')
-def portfolio():
-    return 'Portfolio Page Route'
+<p style="text-align:center">&nbsp;</p>
 
-@app.route('/contact')
-def contact():
-    return 'Contact Page Route'    
+<p style="text-align:center"><img alt="" src="https://c.tenor.com/_4xCiEhhoZsAAAAd/dog-smile.gif" style="height:320px; width:320px" /></p>
+
+<p style="text-align:center">&nbsp;</p>
+
+<p style="text-align:center">&gt;&gt;&gt;&nbsp;<strong><span style="background-color:#00ff00"><a href="/" style="background-color: #00ff00;">Home</a></span></strong>&nbsp;|&nbsp;<strong><span style="background-color:#00ff00"><a href="/rss" style="background-color: #00ff00;">nHentai RSS English</a></span>&nbsp;</strong>&lt;&lt;&lt;&lt;</p>
+'''
     
 #if __name__ == '__main__':
 #  sch.start()
