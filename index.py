@@ -50,21 +50,26 @@ def data():
 def main():
   return '''
 <hr />
-<h1 style="text-align:center"><strong>nHentai API</strong></h1>
+<h1 style="text-align:center"><span style="font-size:48px"><strong>nHentai API</strong></span></h1>
 
+<hr />
 <p>&nbsp;</p>
 
-<p style="text-align:center">please donate :&gt;</p>
+<p style="text-align:center"><span style="font-size:20px">please donate :&gt;</span></p>
 
-<p style="text-align:center"><span style="font-size:9px">paypal :&nbsp;paypal.me/mohimronfirdaus</span></p>
+<p style="text-align:center">&nbsp;</p>
+
+<p style="text-align:center"><span style="font-size:20px"><a href="https://paypal.me/mohimronfirdaus" target="_self"><img alt="" src="https://c.tenor.com/oCxcur4d32wAAAAC/squidward-spare-change.gif" style="height:237px; width:300px" /></a></span></p>
 
 <p style="text-align:center">&nbsp;</p>
 
 <p style="text-align:center">&nbsp;</p>
 
-<p style="text-align:center">&nbsp;</p>
+<hr />
+<p style="text-align:center"><span style="font-size:20px">&gt;&gt;&gt;&nbsp;<strong><span style="background-color:#00ff00"><a href="/rss" style="background-color: #00ff00;">nHentai English RSS</a></span>&nbsp;</strong>| <strong><span style="background-color:#00ff00"><a href="/rss-pop" style="background-color: #00ff00;">nHentai Today Popular RSS</a></span></strong> |&nbsp;<strong><span style="background-color:#00ff00"><a href="/about" style="background-color: #00ff00;">About</a></span>&nbsp;</strong>&lt;&lt;&lt;</span></p>
 
-<p style="text-align:center">&gt;&gt;&gt;&nbsp;<strong><span style="background-color:#00ff00"><a href="/rss" style="background-color: #00ff00;">nHentai RSS English</a></span>&nbsp;</strong>| <strong><span style="background-color:#00ff00"><a href="/about" style="background-color: #00ff00;">About</a></span>&nbsp;</strong>&lt;&lt;&lt;</p>
+<hr />
+<p>&nbsp;</p>
 
   '''
 @app.route('/rss')
@@ -75,19 +80,45 @@ def rss():
 def about():
     return '''
 <hr />
-<h1 style="text-align:center">What are you expecting here ?</h1>
+<h1 style="text-align:center"><span style="font-size:48px">What are you expecting here ?</span></h1>
 
-<p style="text-align:center">There are no nude picts here :P</p>
+<hr />
+<p style="text-align:center">&nbsp;</p>
+
+<p style="text-align:center"><span style="font-size:20px">There are no nude picts here :P</span></p>
 
 <p style="text-align:center">&nbsp;</p>
 
-<p style="text-align:center"><img alt="" src="https://c.tenor.com/_4xCiEhhoZsAAAAd/dog-smile.gif" style="height:320px; width:320px" /></p>
+<p style="text-align:center"><span style="font-size:20px"><img alt="" src="https://c.tenor.com/_4xCiEhhoZsAAAAd/dog-smile.gif" style="height:320px; width:320px" /></span></p>
 
 <p style="text-align:center">&nbsp;</p>
 
-<p style="text-align:center">&gt;&gt;&gt;&nbsp;<strong><span style="background-color:#00ff00"><a href="/" style="background-color: #00ff00;">Home</a></span></strong>&nbsp;|&nbsp;<strong><span style="background-color:#00ff00"><a href="/rss" style="background-color: #00ff00;">nHentai RSS English</a></span>&nbsp;</strong>&lt;&lt;&lt;&lt;</p>
+<p style="text-align:center"><span style="font-size:20px">&gt;&gt;&gt;&nbsp;<strong><span style="background-color:#00ff00"><a href="/" style="background-color: #00ff00;">Home</a></span></strong>&nbsp;|&nbsp;<strong><span style="background-color:#00ff00"><a href="/rss" style="background-color: #00ff00;">nHentai English RSS</a></span>&nbsp;</strong>| <strong><span style="background-color:#00ff00"><a href="/rss-pop" style="background-color: #00ff00;">nHentai Today Popular RSS</a></span>&nbsp;</strong>&lt;&lt;&lt;&lt;</span></p>
 '''
-    
+ 
+@app.route('/rss-pop')
+def rss():
+ return '''
+ <hr />
+ <h1 style="text-align:center"><span style="font-size:72px"><strong>404 Not Found</strong></span></h1>
+
+ <p style="text-align:center"><span style="font-size:20px">Still under construction</span></p>
+
+ <hr />
+ <p>&nbsp;</p>
+
+ <p>&nbsp;</p>
+
+ <p style="text-align:center"><img alt="" src="https://c.tenor.com/nq76xNvyoYkAAAAd/construction-lol.gif" style="height:264px; width:424px" /></p>
+
+ <p style="text-align:center">&nbsp;</p>
+
+ <p style="text-align:center">&nbsp;</p>
+
+ <p style="text-align:center"><span style="font-size:20px">&gt;&gt;&gt;&nbsp;<strong><span style="background-color:#00ff00"><a href="/" style="background-color: #00ff00;">Home</a></span></strong>&nbsp;|&nbsp;<strong><span style="background-color:#00ff00"><a href="/rss" style="background-color: #00ff00;">nHentai English RSS</a></span>&nbsp;</strong>| <strong><span style="background-color:#00ff00"><a href="/about" style="background-color: #00ff00;">About</a></span>&nbsp;</strong>&lt;&lt;&lt;&lt;</span></p>
+
+ '''
+  
 #if __name__ == '__main__':
 #  sch.start()
 #  app.run()
