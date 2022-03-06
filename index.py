@@ -15,6 +15,10 @@ app = Flask(__name__)
 sch = APScheduler()
 sch.init_app(app)
 
+scraper = cfscrape.create_scraper()  # returns a CloudflareScraper instance
+# Or: scraper = cfscrape.CloudflareScraper()  # CloudflareScraper inherits from requests.Session
+print(scraper.get("https://nhentai.net/").content)  # => "<!DOCTYPE html><html><head>..."
+
 @sch.task('cron', id='data', second='*/20')
 def data():
  
@@ -24,10 +28,6 @@ def data():
   print(tm)
   data1 = {}
   url = requests.get('https://nhentai.net/search/?q=english+-guro+-amputee+-bbm&page=1')
-  
-  scraper = cfscrape.create_scraper()  # returns a CloudflareScraper instance
-  # Or: scraper = cfscrape.CloudflareScraper()  # CloudflareScraper inherits from requests.Session
-  print scraper.get("https://nhentai.net/").content  # => "<!DOCTYPE html><html><head>..."
   
   soup = BeautifulSoup(url.content, 'html')
   contents = soup.find('div', attrs = {'class':'container index-container'})
@@ -63,11 +63,7 @@ def datapop():
   print(tm)
   data1 = {}
   url = requests.get('https://nhentai.net/search/?q=english+-guro+-amputee&page=1&sort=popular-today')
-  
-  scraper = cfscrape.create_scraper()  # returns a CloudflareScraper instance
-  # Or: scraper = cfscrape.CloudflareScraper()  # CloudflareScraper inherits from requests.Session
-  print scraper.get("https://nhentai.net/").content  # => "<!DOCTYPE html><html><head>..."
-  
+    
   soup = BeautifulSoup(url.content, 'html')
   contents = soup.find('div', attrs = {'class':'container index-container'})
 
