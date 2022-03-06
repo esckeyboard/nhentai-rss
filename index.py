@@ -7,7 +7,7 @@ import datetime
 import re
 import requests
 
-import cfscrape
+import cloudscraper
 
 
 app = Flask(__name__)
@@ -17,7 +17,7 @@ sch.init_app(app)
 
 scraper = cfscrape.create_scraper()  # returns a CloudflareScraper instance
 # Or: scraper = cfscrape.CloudflareScraper()  # CloudflareScraper inherits from requests.Session
-print(scraper.get("https://nhentai.net/").content)  # => "<!DOCTYPE html><html><head>..."
+print(scraper.get("http://somesite.com").text)
 
 @sch.task('cron', id='data', second='*/20')
 def data():
