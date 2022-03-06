@@ -19,10 +19,9 @@ app = Flask(__name__)
 sch = APScheduler()
 sch.init_app(app)
 
-scraper = cloudscraper.create_scraper()
-r = scraper.get("https://nhentai.net").text 
-y = json.loads(r)
-print (y)
+session = requests.Session()
+session.headers = ...
+scraper = cfscrape.create_scraper(sess=session)
 
 # os.system("playwright install")
 
