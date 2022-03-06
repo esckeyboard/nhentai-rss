@@ -27,7 +27,7 @@ def data():
   
   scraper = cfscrape.create_scraper()  # returns a CloudflareScraper instance
   # Or: scraper = cfscrape.CloudflareScraper()  # CloudflareScraper inherits from requests.Session
-  print scraper.get(url).content  # => "<!DOCTYPE html><html><head>..."
+  print scraper.get("https://nhentai.net/").content  # => "<!DOCTYPE html><html><head>..."
   
   soup = BeautifulSoup(url.content, 'html')
   contents = soup.find('div', attrs = {'class':'container index-container'})
@@ -66,7 +66,7 @@ def datapop():
   
   scraper = cfscrape.create_scraper()  # returns a CloudflareScraper instance
   # Or: scraper = cfscrape.CloudflareScraper()  # CloudflareScraper inherits from requests.Session
-  print scraper.get(url).content  # => "<!DOCTYPE html><html><head>..."
+  print scraper.get("https://nhentai.net/").content  # => "<!DOCTYPE html><html><head>..."
   
   soup = BeautifulSoup(url.content, 'html')
   contents = soup.find('div', attrs = {'class':'container index-container'})
