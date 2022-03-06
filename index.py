@@ -21,7 +21,7 @@ sch.init_app(app)
 
 session = requests.Session()
 session.headers = ...
-scraper = cfscrape.create_scraper(sess=session)
+scraper = cloudscraper.create_scraper(sess=session)
 
 # os.system("playwright install")
 
