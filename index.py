@@ -6,8 +6,12 @@ from flask_apscheduler import APScheduler
 import datetime
 import re
 import requests
-import os
-from playwright.sync_api import sync_playwright
+
+import cloudscraper
+import json
+
+# import os
+# from playwright.sync_api import sync_playwright
 
 
 app = Flask(__name__)
@@ -15,15 +19,20 @@ app = Flask(__name__)
 sch = APScheduler()
 sch.init_app(app)
 
-os.system("playwright install")
+scraper = cloudscraper.create_scraper()
+r = scraper.get("https://nhentai.net").text 
+y = json.loads(r)
+print (y)
 
-with sync_playwright() as p:
-    browser = p.webkit.launch()
-    page = browser.new_page()
-    page.goto("https://nhentai.net")
-    page.wait_for_timeout(10000)
-    print(page.content())
-    browser.close()
+# os.system("playwright install")
+
+#with sync_playwright() as p:
+#    browser = p.webkit.launch()
+#    page = browser.new_page()
+#    page.goto("https://nhentai.net")
+#    page.wait_for_timeout(10000)
+#    print(page.content())
+#    browser.close()
 
 @sch.task('cron', id='data', second='*/20')
 def data():
