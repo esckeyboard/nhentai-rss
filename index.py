@@ -15,7 +15,7 @@ app = Flask(__name__)
 sch = APScheduler()
 sch.init_app(app)
 
-scraper = cfscrape.create_scraper()  # returns a CloudflareScraper instance
+scraper = cloudscraper.create_scraper()  # returns a CloudflareScraper instance
 # Or: scraper = cfscrape.CloudflareScraper()  # CloudflareScraper inherits from requests.Session
 print(scraper.get("http://somesite.com").text)
 
