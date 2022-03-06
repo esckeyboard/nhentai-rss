@@ -3,6 +3,4 @@ beautifulsoup4
 requests 
 Flask-APScheduler
 tzlocal<=3.0
-nodejs
-cloudscraper
-requests_toolbelt>=0.9.1
+playwright
