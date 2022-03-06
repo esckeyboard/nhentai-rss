@@ -4,3 +4,5 @@ requests
 Flask-APScheduler
 tzlocal<=3.0
 playwright
+cloudscraper
+json
