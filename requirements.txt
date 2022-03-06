@@ -3,3 +3,4 @@ beautifulsoup4
 requests 
 Flask-APScheduler
 tzlocal<=3.0
+nodejs
