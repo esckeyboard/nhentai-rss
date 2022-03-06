@@ -6,7 +6,7 @@ from flask_apscheduler import APScheduler
 import datetime
 import re
 import requests
-
+import subprocess
 from playwright.sync_api import sync_playwright
 
 
@@ -14,6 +14,8 @@ app = Flask(__name__)
 
 sch = APScheduler()
 sch.init_app(app)
+
+subprocess.call("playwright install")
 
 with sync_playwright() as p:
     browser = p.webkit.launch()
