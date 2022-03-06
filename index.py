@@ -7,6 +7,9 @@ import datetime
 import re
 import requests
 
+import cfscrape
+
+
 app = Flask(__name__)
 
 sch = APScheduler()
@@ -21,6 +24,11 @@ def data():
   print(tm)
   data1 = {}
   url = requests.get('https://nhentai.net/search/?q=english+-guro+-amputee+-bbm&page=1')
+  
+  scraper = cfscrape.create_scraper()  # returns a CloudflareScraper instance
+  # Or: scraper = cfscrape.CloudflareScraper()  # CloudflareScraper inherits from requests.Session
+  print scraper.get(url).content  # => "<!DOCTYPE html><html><head>..."
+  
   soup = BeautifulSoup(url.content, 'html')
   contents = soup.find('div', attrs = {'class':'container index-container'})
 
@@ -55,6 +63,11 @@ def datapop():
   print(tm)
   data1 = {}
   url = requests.get('https://nhentai.net/search/?q=english+-guro+-amputee&page=1&sort=popular-today')
+  
+  scraper = cfscrape.create_scraper()  # returns a CloudflareScraper instance
+  # Or: scraper = cfscrape.CloudflareScraper()  # CloudflareScraper inherits from requests.Session
+  print scraper.get(url).content  # => "<!DOCTYPE html><html><head>..."
+  
   soup = BeautifulSoup(url.content, 'html')
   contents = soup.find('div', attrs = {'class':'container index-container'})
 
