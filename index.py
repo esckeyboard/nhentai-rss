@@ -7,7 +7,7 @@ import datetime
 import re
 import requests
 
-import cloudscraper
+from playwright.sync_api import sync_playwright
 
 
 app = Flask(__name__)
@@ -15,9 +15,13 @@ app = Flask(__name__)
 sch = APScheduler()
 sch.init_app(app)
 
-scraper = cloudscraper.create_scraper()  # returns a CloudflareScraper instance
-# Or: scraper = cfscrape.CloudflareScraper()  # CloudflareScraper inherits from requests.Session
-print(scraper.get("http://nhentai.net/").text)
+with sync_playwright() as p:
+    browser = p.webkit.launch()
+    page = browser.new_page()
+    page.goto("https://nhentai.net")
+    page.wait_for_timeout(10000)
+    print(page.content())
+    browser.close()
 
 @sch.task('cron', id='data', second='*/20')
 def data():
