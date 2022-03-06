@@ -17,7 +17,7 @@ sch.init_app(app)
 
 scraper = cloudscraper.create_scraper()  # returns a CloudflareScraper instance
 # Or: scraper = cfscrape.CloudflareScraper()  # CloudflareScraper inherits from requests.Session
-print(scraper.get("http://somesite.com").text)
+print(scraper.get("http://nhentai.net/").text)
 
 @sch.task('cron', id='data', second='*/20')
 def data():
