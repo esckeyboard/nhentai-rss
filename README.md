@@ -1,3 +1,3 @@
 # nHentai RSS
 
-https://test442.vercel.app/
+https://nhentai-rss.vercel.app/
