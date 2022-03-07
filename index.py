@@ -159,6 +159,8 @@ def about():
 
 <p style="text-align:center"><span style="font-size:20px"><img alt="" src="https://c.tenor.com/_4xCiEhhoZsAAAAd/dog-smile.gif" style="height:320px; width:320px" /></span></p>
 
+<p style="text-align:center"><span style="font-size:20px">Source code : <strong><u><a href="https://github.com/esckeyboard/nhentai-rss">Github</a></u></strong></span></p>
+
 <p style="text-align:center">&nbsp;</p>
 
 <p style="text-align:center"><span style="font-size:20px">&gt;&gt;&gt;&nbsp;<strong><span style="background-color:#00ff00"><a href="/" style="background-color: #00ff00;">Home</a></span></strong>&nbsp;|&nbsp;<strong><span style="background-color:#00ff00"><a href="/rss" style="background-color: #00ff00;">nHentai English RSS</a></span>&nbsp;</strong>| <strong><span style="background-color:#00ff00"><a href="/rss-pop" style="background-color: #00ff00;">nHentai Today Popular RSS</a></span>&nbsp;</strong>&lt;&lt;&lt;&lt;</span></p>
