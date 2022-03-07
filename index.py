@@ -6,13 +6,8 @@ from flask_apscheduler import APScheduler
 import datetime
 import re
 import requests
-
 import cloudscraper
 import json
-
-# import os
-# from playwright.sync_api import sync_playwright
-
 
 app = Flask(__name__)
 
@@ -22,16 +17,6 @@ sch.init_app(app)
 session = requests.Session()
 session.headers = ...
 scraper = cloudscraper.create_scraper(sess=session)
-
-# os.system("playwright install")
-
-#with sync_playwright() as p:
-#    browser = p.webkit.launch()
-#    page = browser.new_page()
-#    page.goto("https://nhentai.net")
-#    page.wait_for_timeout(10000)
-#    print(page.content())
-#    browser.close()
 
 @sch.task('cron', id='data', second='*/20')
 def data():
@@ -45,10 +30,7 @@ def data():
   
   soup = BeautifulSoup(url.content, 'html')
   contents = soup.find('div', attrs = {'class':'container index-container'})
-
   
-  a1 = '<?xml version="1.0" encoding="utf-8"?>\n<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">\n<channel>\n<title>nhentai-api</title>\n<lastBuildDate>', tm, '</lastBuildDate>\n'
-
   for content in contents :
     title1 = content.text
     link = content.a['href']
@@ -81,27 +63,15 @@ def datapop():
   soup = BeautifulSoup(url.content, 'html')
   contents = soup.find('div', attrs = {'class':'container index-container'})
 
-#  f = open("main.xml", "w")
-#  print('<?xml version="1.0" encoding="utf-8"?>\n<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">\n<channel>\n<title>nhentai-api</title>\n<lastBuildDate>', tm, '</lastBuildDate>\n',file=f)
-  a1 = '<?xml version="1.0" encoding="utf-8"?>\n<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">\n<channel>\n<title>nhentai-api</title>\n<lastBuildDate>', tm, '</lastBuildDate>\n'
-
   for content in contents :
     title1 = content.text
     link = content.a['href']
     title = re.sub(r'[@$&]+','', title1)
-    konten = f"""<item>
-  <title>{title}</title>
-  <link>https://nhentai.net{link}</link>
-</item>"""
-#    print(konten, file=f)
-    a2 = konten
+
     data1[title] = f"https://nhentai.net{link}"
   
   nl = "\n"
-  print(data1)
-  a3 = "\n</channel>\n</rss>" 
-#  print("</channel>\n</rss>", file=f)
-#  f.close()
+
   return f'''<?xml version="1.0" encoding="utf-8"?>
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
 <channel>
@@ -115,6 +85,10 @@ def datapop():
 @app.errorhandler(404)
 def page_not_found(e):
  return '''
+<head>
+ <title>Page Not Found</title>
+</head>
+
 <hr />
 <h1 style="text-align:center"><span style="font-size:72px"><strong>404 Not Found</strong></span></h1>
 
@@ -137,6 +111,9 @@ def page_not_found(e):
 @app.route('/')
 def main():
   return '''
+<head>
+ <title>nhentai-rss</title>
+</head>
 <hr />
 <h1 style="text-align:center"><span style="font-size:48px"><strong>nHentai API</strong></span></h1>
 
@@ -166,6 +143,10 @@ def rss():
 @app.route('/about')
 def about():
     return '''
+<head>
+ <title>nhentai-rss</title>
+</head>
+
 <hr />
 <h1 style="text-align:center"><span style="font-size:48px">What are you expecting here ?</span></h1>
 
