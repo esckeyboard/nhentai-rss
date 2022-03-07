@@ -41,7 +41,7 @@ def data():
   print("============ DATA UPDATED ============")
   print(tm)
   data1 = {}
-  url = requests.get('https://nhentai.net/search/?q=english+-guro+-amputee+-bbm&page=1')
+  url = requests.get('https://nhentai.net/search/?q=english')
   
   soup = BeautifulSoup(url.content, 'html')
   contents = soup.find('div', attrs = {'class':'container index-container'})
@@ -76,7 +76,7 @@ def datapop():
   print("============ DATA UPDATED ============")
   print(tm)
   data1 = {}
-  url = requests.get('https://nhentai.net/search/?q=english+-guro+-amputee&page=1&sort=popular-today')
+  url = requests.get('https://nhentai.net/search/?q=%22%22&sort=popular-today')
     
   soup = BeautifulSoup(url.content, 'html')
   contents = soup.find('div', attrs = {'class':'container index-container'})
@@ -105,7 +105,7 @@ def datapop():
   return f'''<?xml version="1.0" encoding="utf-8"?>
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
 <channel>
-<title>nhentai-eng-api</title>
+<title>nhentai-todaypopular-feed</title>
 <lastBuildDate>{tm}</lastBuildDate>
 {nl.join(f'<item>{nl} <title>{key}</title>{nl} <link>{value}</link>{nl}</item>' for key, value in data1.items())}
 </channel>
