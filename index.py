@@ -113,6 +113,7 @@ def main():
   return '''
 <head>
  <title>nhentai-rss</title>
+ <meta name="google-site-verification" content="E7EGcxY15RFa-8vkDHisEJWk-J_CPSdqeIhn3CRyfC0" />
 </head>
 <hr />
 <h1 style="text-align:center"><span style="font-size:48px"><strong>nHentai API</strong></span></h1>
