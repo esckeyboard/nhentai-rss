@@ -32,9 +32,10 @@ def data():
   contents = soup.find('div', attrs = {'class':'container index-container'})
   
   for content in contents :
+    ban_char = ['<', '>', '[', ']', '@', '$', '&', '+']
     title1 = content.text
     link = content.a['href']
-    title = re.sub(r'[@$&]+','', title1)
+    title = re.sub(ban_char,'', title1)
     
     data1[title] = f"https://nhentai.net{link}"
   
@@ -64,9 +65,10 @@ def datapop():
   contents = soup.find('div', attrs = {'class':'container index-container'})
 
   for content in contents :
+    ban_char = ['<', '>', '[', ']', '@', '$', '&', '+']
     title1 = content.text
     link = content.a['href']
-    title = re.sub(r'[@$&]+','', title1)
+    title = re.sub(ban_char,'', title1)
 
     data1[title] = f"https://nhentai.net{link}"
   
