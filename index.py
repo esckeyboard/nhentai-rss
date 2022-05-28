@@ -35,7 +35,8 @@ def data():
     ban_char = ['<', '>', '[', ']', '@', '$', '&', '+']
     title1 = content.text
     link = content.a['href']
-    title = re.sub(ban_char,'', title1)
+    pattern = '[' + ''.join(ban_char) + ']'
+    title = re.sub(pattern,'', title1)
     
     data1[title] = f"https://nhentai.net{link}"
   
@@ -68,7 +69,8 @@ def datapop():
     ban_char = ['<', '>', '[', ']', '@', '$', '&', '+']
     title1 = content.text
     link = content.a['href']
-    title = re.sub(ban_char,'', title1)
+    pattern = '[' + ''.join(ban_char) + ']'
+    title = re.sub(pattern,'', title1)
 
     data1[title] = f"https://nhentai.net{link}"
   
