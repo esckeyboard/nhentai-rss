@@ -34,7 +34,7 @@ def data():
   for content in contents :
     title1 = content.text
     link = content.a['href']
-    title = re.sub(r'[@$[\]&]+','', title1)
+    title = re.sub(r'[@$[\]&+]','', title1)
     
     data1[title] = f"https://nhentai.net{link}"
   
@@ -66,7 +66,7 @@ def datapop():
   for content in contents :
     title1 = content.text
     link = content.a['href']
-    title = re.sub(r'[@$[\]&]+','', title1)
+    title = re.sub(r'[@$[\]&+]','', title1)
 
     data1[title] = f"https://nhentai.net{link}"
   
